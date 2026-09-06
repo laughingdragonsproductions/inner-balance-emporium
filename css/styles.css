@@ -255,11 +255,16 @@ h1, h2, h3, .display {
 .hero-media {
   position: relative;
   min-height: 420px;
+  overflow: hidden;
   background:
     radial-gradient(circle at 32% 28%, rgba(220,192,138,0.45), transparent 32%),
     radial-gradient(circle at 72% 62%, rgba(150,95,180,0.5), transparent 42%),
     linear-gradient(145deg, #5a3764, #2d1b33 45%, #1a0f1f 75%, #0b0e1a);
-  overflow: hidden;
+}
+.hero-media.hero-home {
+  background:
+    linear-gradient(120deg, rgba(45,27,51,0.1), rgba(26,15,31,0.38)),
+    url("../assets/images/hero-home.jpg") center/cover;
 }
 .hero-media::before {
   content: "☽ ✦";
@@ -272,6 +277,7 @@ h1, h2, h3, .display {
   color: rgba(220, 192, 138, 0.35);
   pointer-events: none;
 }
+.hero-media.hero-home::before { display: none; }
 .hero-media .script-note {
   position: absolute;
   top: 1.5rem;
@@ -293,6 +299,16 @@ h1, h2, h3, .display {
     radial-gradient(circle at 20% 80%, rgba(120,70,150,0.35), transparent 45%),
     linear-gradient(180deg, #1a0f1f, #0b0e1a 70%);
   padding: 4rem 1.5rem;
+}
+.hero-dark.hero-shop {
+  background:
+    linear-gradient(180deg, rgba(11,14,26,0.5), rgba(45,27,51,0.78)),
+    url("../assets/images/hero-shop.jpg") center/cover;
+}
+.hero-dark.hero-studio {
+  background:
+    linear-gradient(180deg, rgba(11,14,26,0.55), rgba(45,27,51,0.82)),
+    url("../assets/images/hero-studio.jpg") center/cover;
 }
 .hero-dark h1 { font-size: clamp(2.5rem, 6vw, 4.2rem); color: var(--white); }
 .hero-dark .script { color: var(--gold-light); }
@@ -435,6 +451,11 @@ h1, h2, h3, .display {
     radial-gradient(circle at 40% 30%, rgba(197,160,89,0.25), transparent 35%),
     linear-gradient(160deg, #4a2f55, #2d1b33 50%, #1a0f1f);
   position: relative;
+}
+.about-photo.about-studio {
+  background:
+    linear-gradient(180deg, transparent 35%, rgba(26,15,31,0.35)),
+    url("../assets/images/about-studio.jpg") center/cover;
 }
 .about-photo::after {
   content: "Create · Balance · Belong ♡";
@@ -655,6 +676,31 @@ textarea.input { min-height: 140px; resize: vertical; }
   flex-wrap: wrap;
   font-size: 0.8rem;
   color: rgba(249,245,240,0.55);
+}
+
+/* Product / category imagery */
+.cover-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.product-card .media,
+.cat-card .thumb,
+.pdp-gallery,
+.wb-card .media,
+.journal-card .media {
+  display: block;
+  overflow: hidden;
+  position: relative;
+}
+.pdp-gallery { border-radius: var(--radius); aspect-ratio: 1; }
+.journal-hero { margin-bottom: 1.5rem; border-radius: var(--radius); overflow: hidden; }
+.journal-hero-img {
+  width: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  display: block;
 }
 
 /* Utilities / placeholders */

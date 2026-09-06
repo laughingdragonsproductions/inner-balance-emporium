@@ -1,0 +1,165 @@
+{
+  "updated_at": "2026-09-06T00:00:00Z",
+  "brand": "InnerBalancEmporium",
+  "reference_mockups": [
+    "assets/mock-home.png",
+    "assets/mock-shop-hero.png",
+    "assets/mock-shop-grid.png",
+    "assets/mock-studio.png"
+  ],
+  "pending": [
+    {
+      "slug": "hero-home",
+      "title": "Home hero — resin coasters and candle",
+      "slot": "banner",
+      "priority": "banner",
+      "aspect": "4:3",
+      "scene": "Handmade purple and gold resin coasters with crescent moons and stars beside a lit candle and dried lavender on cream linen, warm bokeh, product lifestyle photo"
+    },
+    {
+      "slug": "hero-shop",
+      "title": "Shop hero — moon over mountains",
+      "slot": "banner",
+      "priority": "banner",
+      "aspect": "16:9",
+      "scene": "Mystical shop banner: glowing full moon over purple nebula sky and dark mountain silhouettes, amethyst crystals and white pillar candle in foreground, cinematic wide composition"
+    },
+    {
+      "slug": "hero-studio",
+      "title": "Studio hero — workbench at night",
+      "slot": "banner",
+      "priority": "banner",
+      "aspect": "16:9",
+      "scene": "Artist resin studio workbench at night, pigment jars, brushes, glowing moon lamp, starry backdrop, warm intentional creative space, wide banner"
+    },
+    {
+      "slug": "about-studio",
+      "title": "About — maker at the bench",
+      "slot": "banner",
+      "priority": "banner",
+      "aspect": "1:1",
+      "scene": "Warm photo from behind of maker at resin art workbench, fairy lights, jars, chalkboard sign Create Balance Belong, cozy studio atmosphere"
+    },
+    {
+      "slug": "cat-home-decor",
+      "title": "Category — Home Decor",
+      "slot": "category",
+      "priority": "category",
+      "aspect": "1:1",
+      "scene": "Square product photo of galaxy resin coasters and gold leaf tray on dark wood, plum purple tones, artisan home decor"
+    },
+    {
+      "slug": "cat-keepsakes",
+      "title": "Category — Keepsakes",
+      "slot": "category",
+      "priority": "category",
+      "aspect": "1:1",
+      "scene": "Decorative purple resin jar with crystal-like lid and gold botanical accents, keepsake vessel product shot"
+    },
+    {
+      "slug": "cat-jewelry",
+      "title": "Category — Jewelry",
+      "slot": "category",
+      "priority": "category",
+      "aspect": "1:1",
+      "scene": "Gold-rimmed resin pendant with pressed flower and crescent moon, jewelry product photography on neutral background"
+    },
+    {
+      "slug": "cat-tabletop-games",
+      "title": "Category — Tabletop Games",
+      "slot": "category",
+      "priority": "category",
+      "aspect": "1:1",
+      "scene": "Set of purple translucent resin DnD dice and gold dominoes with moon icons on velvet surface, tabletop games product shot"
+    },
+    {
+      "slug": "celestial-moon-coaster-set",
+      "title": "Celestial Moon Coaster Set",
+      "slot": "product",
+      "priority": "product",
+      "aspect": "1:1",
+      "scene": "Four round resin coasters with moon phases, purple galaxy swirls and gold leaf, product photo on dark surface with soft candlelight"
+    },
+    {
+      "slug": "amethyst-realm-pyramid",
+      "title": "Amethyst Realm Pyramid",
+      "slot": "product",
+      "priority": "product",
+      "aspect": "1:1",
+      "scene": "Luminous amethyst-purple resin pyramid paperweight with gold flecks, one of a kind artisan piece, moody product photography"
+    },
+    {
+      "slug": "moonlit-trinket-dish",
+      "title": "Moonlit Trinket Dish",
+      "slot": "product",
+      "priority": "product",
+      "aspect": "1:1",
+      "scene": "Crescent moon shaped resin trinket dish in deep purple with gold edge, holding rings, soft warm lighting"
+    },
+    {
+      "slug": "lunar-keepsake-jar",
+      "title": "Lunar Keepsake Jar",
+      "slot": "product",
+      "priority": "product",
+      "aspect": "1:1",
+      "scene": "Moon-etched resin keepsake jar with crystal lid, purple and gold, gift-ready product photo"
+    },
+    {
+      "slug": "pressed-flower-moon-necklace",
+      "title": "Pressed Flower Moon Necklace",
+      "slot": "product",
+      "priority": "product",
+      "aspect": "1:1",
+      "scene": "Round resin pendant necklace with pressed botanicals and tiny crescent moon, gold chain, jewelry flat lay"
+    },
+    {
+      "slug": "galaxy-vanity-tray",
+      "title": "Galaxy Vanity Tray",
+      "slot": "product",
+      "priority": "product",
+      "aspect": "1:1",
+      "scene": "Oval galaxy resin vanity tray with deep space purple, stars and gold flakes, styled with perfume bottle"
+    },
+    {
+      "slug": "celestial-keychain",
+      "title": "Celestial Keychain",
+      "slot": "product",
+      "priority": "product",
+      "aspect": "1:1",
+      "scene": "Small resin keychain charm with crescent moon and gold glitter on keyring, macro product shot"
+    },
+    {
+      "slug": "blooming-heart-paperweight",
+      "title": "Blooming Heart Paperweight",
+      "slot": "product",
+      "priority": "product",
+      "aspect": "1:1",
+      "scene": "Heart shaped resin paperweight with embedded dried flowers, purple pink gold tones, desk product photo"
+    },
+    {
+      "slug": "journal-testing-new-mold",
+      "title": "Journal — Testing a New Mold",
+      "slot": "journal",
+      "priority": "journal",
+      "aspect": "3:2",
+      "scene": "Crystal tray silicone mold on resin workbench with mixing cups, studio process photo, no text"
+    },
+    {
+      "slug": "journal-new-color-story",
+      "title": "Journal — A New Color Story",
+      "slot": "journal",
+      "priority": "journal",
+      "aspect": "3:2",
+      "scene": "Swirled indigo plum and gold resin color test in mixing cups, artisan experiment, studio lighting"
+    },
+    {
+      "slug": "journal-nothing-goes-to-waste",
+      "title": "Journal — Nothing Goes to Waste",
+      "slot": "journal",
+      "priority": "journal",
+      "aspect": "3:2",
+      "scene": "Small moon charm resin scrap pours on craft mat, cozy maker detail shot, purple gold palette"
+    }
+  ],
+  "done": []
+}

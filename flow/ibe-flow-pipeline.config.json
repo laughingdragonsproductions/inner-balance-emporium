@@ -1,0 +1,66 @@
+{
+  "flowUrl": "https://flow.google.com",
+  "flowProjectUrl": "https://flow.google.com/project/305146af-0c43-4fae-9b77-6d54b8fa383f",
+  "flowProjectName": "InnerBalancEmporium",
+  "siteRepoDir": "C:\\Users\\David\\Projects\\inner-balance-emporium",
+  "imageQueueFile": "C:\\Users\\David\\Projects\\inner-balance-emporium\\flow\\image-queue.json",
+  "imageJobsDir": "C:\\Users\\David\\Projects\\inner-balance-emporium\\flow\\flow-image-jobs",
+  "imageRendersDir": "C:\\Users\\David\\Projects\\inner-balance-emporium\\flow\\flow-image-renders",
+  "heroAssetsDir": "C:\\Users\\David\\Projects\\inner-balance-emporium\\assets\\images",
+  "logFile": "C:\\Users\\David\\Projects\\inner-balance-emporium\\flow\\flow-pipeline.log",
+  "chrome": {
+    "profileDirectory": "Profile 8",
+    "cdpUrl": "http://127.0.0.1:9334",
+    "debugPort": 9334,
+    "expectedGoogleAccount": "laughingdragonsproductions@gmail.com",
+    "headless": false
+  },
+  "timeouts": {
+    "pageLoadMs": 90000,
+    "generationMs": 600000,
+    "pollMs": 5000
+  },
+  "selectors": {
+    "createStudioButton": "button:has-text('Create with Google Flow'), a:has-text('Create with Google Flow')",
+    "promptTextarea": "[contenteditable='true'], textarea:not(.g-recaptcha-response), [role='textbox']:not(.g-recaptcha-response)",
+    "presetChipButton": "button:has-text('crop_16_9'), button:has-text('Nano Banana'), button:has-text('720p')",
+    "submitButton": "button:has-text('arrow_forward')",
+    "generateButton": "button:has-text('arrow_forward'), button:has-text('Generate'), button:has-text('Create')",
+    "fileInput": "input[type='file']",
+    "downloadMenuButton": "button:has-text('more_vert')",
+    "downloadMenuItem": "[role='menuitem']:has-text('Download'), [role='menuitem']:has-text('download')",
+    "resultImage": "main img[src*='flow-content.google'], img[src*='flow-content.google']"
+  },
+  "flowPresets": {
+    "mode": "Image",
+    "aspectRatio": "16:9",
+    "model": "Nano Banana Pro",
+    "outputCount": "x2"
+  },
+  "imageMode": {
+    "presetChipButton": "button:has-text('crop_16_9'), button:has-text('Nano Banana'), button:has-text('720p')",
+    "modeImageButton": "Image",
+    "modeVideoButton": "Video",
+    "aspectRatioLabel": "16:9",
+    "modelLabel": "Nano Banana Pro",
+    "outputCountLabel": "x2",
+    "completedTile": "main img[src*='flow-content.google'], img[src*='flow-content.google'], img[src*='blob:']",
+    "downloadButton": "a[download], [role='menuitem']:has-text('Download'), button:has-text('Download media')",
+    "downloadMenuButton": "button:has-text('more_vert')",
+    "downloadMenuItem": "[role='menuitem']:has-text('Download'), [role='menuitem']:has-text('download')",
+    "resultImage": "main img[src*='flow-content.google'], img[src*='flow-content.google']",
+    "generatingIndicator": "[role='progressbar']"
+  },
+  "visualPromptTemplate": "Professional product and lifestyle photograph for InnerBalancEmporium handmade resin art shop. Deep plum purple, gold leaf, celestial moons and stars, dried lavender, warm candlelight. No text, no logos, no watermarks, no readable labels.\nScene: {scene}.\nMood: mystical, artisanal, intentional, high-end boutique ecommerce.\nComposition: clean hero-ready framing.",
+  "defaultAspect": "16:9",
+  "batchSize": 3,
+  "submitAckWaitMs": 3000,
+  "harvestPollMs": 5000,
+  "harvestMaxWaitMs": 600000,
+  "pendingHarvestFile": "C:\\Users\\David\\Projects\\inner-balance-emporium\\flow\\flow-image-renders\\pending-harvest.json",
+  "heroVariants": {
+    "preferredIndex": 0,
+    "altSuffix": "-alt"
+  },
+  "pushLiveSite": false
+}

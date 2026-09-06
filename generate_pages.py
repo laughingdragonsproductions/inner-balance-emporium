@@ -45,6 +45,14 @@ JOURNAL = [
 ]
 
 
+def asset_img(slug: str, alt: str, prefix: str = "", css: str = "cover-img") -> str:
+    safe_alt = alt.replace('"', "&quot;")
+    return (
+        f'<img src="{prefix}assets/images/{slug}.jpg" alt="{safe_alt}" '
+        f'class="{css}" loading="lazy">'
+    )
+
+
 def shell(title, page, depth, body, extra_head=""):
     prefix = "../" * depth
     return f"""<!DOCTYPE html>
@@ -73,11 +81,11 @@ def shell(title, page, depth, body, extra_head=""):
 def product_cards(ids=None, prefix=""):
     items = PRODUCTS if ids is None else [p for p in PRODUCTS if p[0] in ids]
     cards = []
-    for slug, name, price, _cat, tag, ph, _desc in items:
+    for slug, name, price, _cat, tag, _ph, _desc in items:
         tag_html = f'<span class="tag">{tag}</span>' if tag else ""
         cards.append(f"""
         <article class="product-card">
-          <a class="media" href="{prefix}products/{slug}.html"><div class="ph {ph}"></div>{tag_html}
+          <a class="media" href="{prefix}products/{slug}.html">{asset_img(slug, name, prefix)}{tag_html}
             <button class="icon-btn wish" type="button" data-mock-wish aria-label="Wishlist">♡</button>
           </a>
           <div class="body">
@@ -112,7 +120,7 @@ home = shell(
       <div><a class="btn btn-gold" href="shop.html">Shop Now →</a></div>
       <div class="hero-values"><span>Create</span><span>·</span><span>Balance</span><span>·</span><span>Belong</span></div>
     </div>
-    <div class="hero-media">
+    <div class="hero-media hero-home">
       <span class="script script-note">Art A Kinder World ♡</span>
     </div>
   </section>
@@ -124,7 +132,7 @@ home = shell(
       <div class="cat-grid" style="margin-top:2rem">
         {"".join(f'''
         <a class="cat-card" href="categories/{slug}.html">
-          <div class="thumb"><div class="ph {ph}"></div></div>
+          <div class="thumb">{asset_img(f"cat-{slug}", name, "")}</div>
           <h3>{name}</h3>
           <p>{sub}</p>
         </a>''' for slug, name, sub, ph, _ in CATEGORIES)}
@@ -149,7 +157,7 @@ home = shell(
 
   <section class="section section-cream">
     <div class="container about-split">
-      <div class="about-photo" role="img" aria-label="Studio workbench"></div>
+      <div class="about-photo about-studio" role="img" aria-label="Studio workbench"></div>
       <div class="about-copy">
         <p class="eyebrow">From the Studio</p>
         <h2>Hi, I'm Eyvette.</h2>
@@ -170,7 +178,7 @@ shop = shell(
     "shop",
     0,
     f"""
-  <section class="hero-dark">
+  <section class="hero-dark hero-shop">
     <div>
       <p class="eyebrow" style="color:var(--gold-light)">✦ Handcrafted with intention ✦</p>
       <h1>Welcome to the <span class="script" style="font-size:1.15em">Shop</span></h1>
@@ -244,7 +252,7 @@ studio = shell(
     "studio",
     0,
     f"""
-  <section class="hero-dark">
+  <section class="hero-dark hero-studio">
     <div>
       <h1>The Studio</h1>
       <p>A closer look at the maker, the process, and the little moments behind each creation.</p>
@@ -274,11 +282,11 @@ studio = shell(
         <span class="eyebrow">Real creations. Brighter days.</span>
       </div>
       <div class="workbench">
-        <article class="wb-card"><div class="media"><div class="ph ph-1"></div><span class="status">In the Works</span></div><div class="body"><h3>Moon Phase Coasters</h3></div></article>
-        <article class="wb-card"><div class="media"><div class="ph ph-2"></div><span class="status">Curing</span></div><div class="body"><h3>Celestial Moon Tray</h3></div></article>
-        <article class="wb-card"><div class="media"><div class="ph ph-3"></div><span class="status">Experiment</span></div><div class="body"><h3>Galaxy Color Tests</h3></div></article>
-        <article class="wb-card"><div class="media"><div class="ph ph-4"></div><span class="status">Coming Soon</span></div><div class="body"><h3>Botanical Pendants</h3></div></article>
-        <article class="wb-card"><div class="media"><div class="ph ph-5"></div><span class="status">One of a Kind</span></div><div class="body"><h3>Flower Catchall</h3></div></article>
+        <article class="wb-card"><div class="media">{asset_img("celestial-moon-coaster-set", "Moon Phase Coasters")}<span class="status">In the Works</span></div><div class="body"><h3>Moon Phase Coasters</h3></div></article>
+        <article class="wb-card"><div class="media">{asset_img("galaxy-vanity-tray", "Celestial Moon Tray")}<span class="status">Curing</span></div><div class="body"><h3>Celestial Moon Tray</h3></div></article>
+        <article class="wb-card"><div class="media">{asset_img("journal-new-color-story", "Galaxy Color Tests")}<span class="status">Experiment</span></div><div class="body"><h3>Galaxy Color Tests</h3></div></article>
+        <article class="wb-card"><div class="media">{asset_img("pressed-flower-moon-necklace", "Botanical Pendants")}<span class="status">Coming Soon</span></div><div class="body"><h3>Botanical Pendants</h3></div></article>
+        <article class="wb-card"><div class="media">{asset_img("moonlit-trinket-dish", "Flower Catchall")}<span class="status">One of a Kind</span></div><div class="body"><h3>Flower Catchall</h3></div></article>
       </div>
     </div>
   </section>
@@ -291,7 +299,7 @@ studio = shell(
       </div>
       <div class="card-row">
         <article class="journal-card">
-          <a class="media" href="journal/testing-new-mold.html"><div class="ph ph-2"></div></a>
+          <a class="media" href="journal/testing-new-mold.html">{asset_img("journal-testing-new-mold", "Testing a New Mold")}</a>
           <div class="body">
             <p class="eyebrow">Apr 18, 2025</p>
             <h3><a href="journal/testing-new-mold.html">Testing a New Mold</a></h3>
@@ -300,7 +308,7 @@ studio = shell(
           </div>
         </article>
         <article class="journal-card">
-          <a class="media" href="journal/new-color-story.html"><div class="ph ph-4"></div></a>
+          <a class="media" href="journal/new-color-story.html">{asset_img("journal-new-color-story", "A New Color Story")}</a>
           <div class="body">
             <p class="eyebrow">Apr 12, 2025</p>
             <h3><a href="journal/new-color-story.html">A New Color Story</a></h3>
@@ -309,7 +317,7 @@ studio = shell(
           </div>
         </article>
         <article class="journal-card">
-          <a class="media" href="journal/nothing-goes-to-waste.html"><div class="ph ph-6"></div></a>
+          <a class="media" href="journal/nothing-goes-to-waste.html">{asset_img("journal-nothing-goes-to-waste", "Nothing Goes to Waste")}</a>
           <div class="body">
             <p class="eyebrow">Apr 5, 2025</p>
             <h3><a href="journal/nothing-goes-to-waste.html">Nothing Goes to Waste</a></h3>
@@ -387,7 +395,7 @@ for slug, name, price, cat, tag, ph, desc in PRODUCTS:
     <div class="container">
       <div class="breadcrumbs"><a href="../index.html">Home</a> › <a href="../shop.html">Shop</a> › <a href="../categories/{cat_slug}.html">{cat}</a> › {name}</div>
       <div class="pdp">
-        <div class="pdp-gallery"><div class="ph {ph}"></div></div>
+        <div class="pdp-gallery">{asset_img(slug, name, "../")}</div>
         <div class="pdp-info">
           {tag_html}
           <h1>{name}</h1>
@@ -541,9 +549,9 @@ journal_index = shell(
     """
   <div class="page-title-bar"><div class="container"><h1>Studio Journal</h1><p>Notes from the pour table.</p></div></div>
   <section class="section"><div class="container card-row">
-    <article class="journal-card"><a class="media" href="testing-new-mold.html"><div class="ph ph-2"></div></a><div class="body"><p class="eyebrow">Apr 18, 2025</p><h3><a href="testing-new-mold.html">Testing a New Mold</a></h3><a href="testing-new-mold.html">Read More →</a></div></article>
-    <article class="journal-card"><a class="media" href="new-color-story.html"><div class="ph ph-4"></div></a><div class="body"><p class="eyebrow">Apr 12, 2025</p><h3><a href="new-color-story.html">A New Color Story</a></h3><a href="new-color-story.html">Read More →</a></div></article>
-    <article class="journal-card"><a class="media" href="nothing-goes-to-waste.html"><div class="ph ph-6"></div></a><div class="body"><p class="eyebrow">Apr 5, 2025</p><h3><a href="nothing-goes-to-waste.html">Nothing Goes to Waste</a></h3><a href="nothing-goes-to-waste.html">Read More →</a></div></article>
+    <article class="journal-card"><a class="media" href="testing-new-mold.html">{asset_img("journal-testing-new-mold", "Testing a New Mold", "../")}</a><div class="body"><p class="eyebrow">Apr 18, 2025</p><h3><a href="testing-new-mold.html">Testing a New Mold</a></h3><a href="testing-new-mold.html">Read More →</a></div></article>
+    <article class="journal-card"><a class="media" href="new-color-story.html">{asset_img("journal-new-color-story", "A New Color Story", "../")}</a><div class="body"><p class="eyebrow">Apr 12, 2025</p><h3><a href="new-color-story.html">A New Color Story</a></h3><a href="new-color-story.html">Read More →</a></div></article>
+    <article class="journal-card"><a class="media" href="nothing-goes-to-waste.html">{asset_img("journal-nothing-goes-to-waste", "Nothing Goes to Waste", "../")}</a><div class="body"><p class="eyebrow">Apr 5, 2025</p><h3><a href="nothing-goes-to-waste.html">Nothing Goes to Waste</a></h3><a href="nothing-goes-to-waste.html">Read More →</a></div></article>
   </div></section>
 """,
 )
@@ -553,7 +561,7 @@ for slug, title, date, blurb in JOURNAL:
     body = f"""
   <div class="page-title-bar"><div class="container"><p class="eyebrow">{date}</p><h1>{title}</h1></div></div>
   <section class="section"><div class="container" style="max-width:720px">
-    <div class="about-photo" style="min-height:280px;margin-bottom:1.5rem;background:linear-gradient(180deg,transparent,rgba(26,15,31,.25)), radial-gradient(circle at 40% 30%, rgba(197,160,89,.35), transparent 40%), linear-gradient(145deg,#4a2f55,#1a0f1f);"></div>
+    <div class="journal-hero">{asset_img(f"journal-{slug}", title, "../", "journal-hero-img")}</div>
     <p class="muted">{blurb}</p>
     <p class="muted">This journal entry is placeholder copy for the mock layout — ready to swap with Eyvette's real studio notes later.</p>
     <p class="script" style="font-size:1.6rem;color:var(--plum)">More art, a kinder world ♡</p>
@@ -608,9 +616,19 @@ npx wrangler pages deploy . --project-name=inner-balance-emporium --branch=main
 
 - Full navigation and product links work.
 - **Add to Cart / Checkout / Subscribe / Contact** are mocked (toast only).
-- Product imagery uses CSS placeholders until real photos are added.
+- Product imagery from `assets/images/` (mock crops + optional Google Flow).
 - Regenerate pages: `python generate_pages.py`
 - See `sitemap.html` for the full clickable page list.
+
+## Custom images
+
+```powershell
+python scripts/prepare_mock_crops.py   # from Eyvette mock PNGs
+python generate_pages.py
+.\\scripts\\run-ibe-flow.ps1 -LiveFlow -Max 3 -Priority banner  # Google Flow stills
+```
+
+Queue: `flow/image-queue.json` (19 slots).
 """
 write("README.md", readme)
 print("done", len(sitemap_links), "linked pages + sitemap")

@@ -29,6 +29,16 @@ npx wrangler pages deploy . --project-name=inner-balance-emporium --branch=main
 
 - Full navigation and product links work.
 - **Add to Cart / Checkout / Subscribe / Contact** are mocked (toast only).
-- Product imagery uses CSS placeholders until real photos are added.
+- Product imagery from `assets/images/` (mock crops + optional Google Flow).
 - Regenerate pages: `python generate_pages.py`
 - See `sitemap.html` for the full clickable page list.
+
+## Custom images
+
+```powershell
+python scripts/prepare_mock_crops.py   # from Eyvette mock PNGs
+python generate_pages.py
+.\scripts\run-ibe-flow.ps1 -LiveFlow -Max 3 -Priority banner  # Google Flow stills
+```
+
+Queue: `flow/image-queue.json` (19 slots).
