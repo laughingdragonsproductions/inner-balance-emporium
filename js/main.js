@@ -25,7 +25,7 @@
       <a class="brand" href="${root}index.html">
         <div class="brand-mark" aria-hidden="true">☽</div>
         <div class="brand-text">
-          <strong>Inner Balanc Emporium</strong>
+          <strong>InnerBalancEmporium</strong>
           <span>by Eyvette</span>
         </div>
       </a>
@@ -54,7 +54,7 @@
         <div class="brand" style="margin-bottom:0.85rem">
           <div class="brand-mark" aria-hidden="true">☽</div>
           <div class="brand-text">
-            <strong>Inner Balanc Emporium</strong>
+            <strong>InnerBalancEmporium</strong>
             <span>by Eyvette</span>
           </div>
         </div>
@@ -88,7 +88,7 @@
       </div>
     </div>
     <div class="container footer-bottom">
-      <span>© 2026 Inner Balanc Emporium by Eyvette. All rights reserved.</span>
+      <span>© 2026 InnerBalancEmporium by Eyvette. All rights reserved.</span>
       <span>CREATE · BALANCE · BELONG · Mock storefront</span>
     </div>
   </footer>

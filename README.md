@@ -1,6 +1,6 @@
-# Inner Balanc Emporium (Mock Site)
+# InnerBalancEmporium (Mock Site)
 
-Public **proof of concept** storefront for **Inner Balanc Emporium by Eyvette** — handmade resin art layout preview.
+Public **proof of concept** storefront for **InnerBalancEmporium by Eyvette** — handmade resin art layout preview.
 
 > Work in progress. Navigation and pages are clickable. **Purchases are disabled** (mock only).
 

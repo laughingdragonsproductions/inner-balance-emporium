@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Generate Inner Balanc Emporium mock HTML pages."""
+"""Generate InnerBalancEmporium mock HTML pages."""
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-BRAND = "Inner Balanc Emporium"
+BRAND = "InnerBalancEmporium"
 
 PRODUCTS = [
     ("celestial-moon-coaster-set", "Celestial Moon Coaster Set", "$38.00", "Home Decor", "Bestseller", "ph-1",
