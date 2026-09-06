@@ -6,7 +6,9 @@ Public **proof of concept** storefront for **Inner Balance Emporium by Eyvette**
 
 ## Live preview
 
-After Cloudflare deploy: `https://inner-balance-emporium.pages.dev`
+**https://inner-balance-emporium.pages.dev**
+
+Forward that link for client mock viewing (purchases disabled).
 
 ## Local preview
 
