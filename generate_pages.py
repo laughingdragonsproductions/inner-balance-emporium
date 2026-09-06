@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-"""Generate Inner Balance Emporium mock HTML pages."""
+"""Generate Inner Balanc Emporium mock HTML pages."""
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
+BRAND = "Inner Balanc Emporium"
 
 PRODUCTS = [
     ("celestial-moon-coaster-set", "Celestial Moon Coaster Set", "$38.00", "Home Decor", "Bestseller", "ph-1",
@@ -51,7 +52,7 @@ def shell(title, page, depth, body, extra_head=""):
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>{title} | Inner Balance Emporium</title>
+  <title>{title} | {BRAND}</title>
   <meta name="description" content="Handmade resin art by Eyvette — mock storefront preview." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -242,7 +243,7 @@ studio = shell(
     "The Studio",
     "studio",
     0,
-    """
+    f"""
   <section class="hero-dark">
     <div>
       <h1>The Studio</h1>
@@ -257,7 +258,7 @@ studio = shell(
       <div>
         <p class="eyebrow">About Eyvette</p>
         <h2>Artist + Dreamer + Nature Lover</h2>
-        <p class="muted">I'm the hands and heart behind Inner Balance Emporium. My resin pieces are inspired by nature, the moon, and the feeling of finding calm in small beautiful things.</p>
+        <p class="muted">I'm the hands and heart behind {BRAND}. My resin pieces are inspired by nature, the moon, and the feeling of finding calm in small beautiful things.</p>
       </div>
       <div class="center">
         <p class="eyebrow">Beauty can be a form of healing</p>
@@ -576,9 +577,17 @@ sitemap_body = """
 ) + "</ul></div></section>"
 write("sitemap.html", shell("Sitemap", "home", 0, sitemap_body))
 
-readme = """# Inner Balance Emporium (Mock Site)
+readme = f"""# {BRAND} (Mock Site)
 
-Static multi-page mock storefront for **Inner Balance Emporium by Eyvette**.
+Public **proof of concept** storefront for **{BRAND} by Eyvette** — handmade resin art layout preview.
+
+> Work in progress. Navigation and pages are clickable. **Purchases are disabled** (mock only).
+
+## Live preview
+
+**https://inner-balance-emporium.pages.dev**
+
+Forward that link for client mock viewing (purchases disabled).
 
 ## Local preview
 
@@ -589,16 +598,19 @@ python -m http.server 5173
 
 Open http://127.0.0.1:5173/
 
+## Deploy (Cloudflare Pages)
+
+```bash
+npx wrangler pages deploy . --project-name=inner-balance-emporium --branch=main
+```
+
 ## Notes
 
 - Full navigation and product links work.
 - **Add to Cart / Checkout / Subscribe / Contact** are mocked (toast only).
 - Product imagery uses CSS placeholders until real photos are added.
 - Regenerate pages: `python generate_pages.py`
-
-## Pages
-
-See `sitemap.html` for the full clickable list (~20+ pages).
+- See `sitemap.html` for the full clickable page list.
 """
 write("README.md", readme)
 print("done", len(sitemap_links), "linked pages + sitemap")
